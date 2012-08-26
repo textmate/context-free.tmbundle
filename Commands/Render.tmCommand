@@ -16,7 +16,7 @@ RES="/tmp/tm_cfdg_${TM_FILENAME%.*}.png"
 cfdg -s $SIZE "$TM_FILEPATH" "$RES"|pre
 
 if [[ -e "$RES" ]]; then
-  echo "&lt;img src='tm-file://${RES// /%20}' width='$SIZE' height='$SIZE'&gt;"
+  echo "&lt;img src='file://${RES// /%20}' width='$SIZE' height='$SIZE'&gt;"
   { sleep 20; rm -f "$RES"; } &amp;&gt;/dev/null &amp;
 fi
 
